@@ -19,7 +19,7 @@ if ( !defined('CACERT_FILE') ) define('CACERT_FILE', INDEX_PATH.'cacert.pem' );
 function _get_gravatar($email, $uagent = "Mozilla/5.0", $size = null) {
     $email_hash = md5(strtolower(trim($email)));
     $gravatar_url = "https://gravatar.com/avatar/{$email_hash}?d=blank";
-    if ( !is_null($size) || $size !== '' ) $gravatar_url .= "&s={$size}";
+    if ( !is_null($size) && $size !== '' ) $gravatar_url .= "&s={$size}";
     $gravatar_url .= "&_=".time();
 
     $options = array(

@@ -50,7 +50,7 @@ function _get_gravatar($email, $uagent = "Mozilla/5.0", $size = null) {
     if ( $blob ) {
         $test_image = base64_encode($result);
 
-        if ( $test_image !== $blank_image && $test !== $default_image ) {
+        if ( $test_image !== $blank_image && $test_image !== $default_image ) {
             return $blob;
         }
 
